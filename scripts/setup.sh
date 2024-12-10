@@ -96,7 +96,7 @@ if [[ "$setup_type" == "native" ]]; then
   source "$HOME/.cargo/env"
 
   echo 'INFO: installing sqlx-cli'
-  cargo install sqlx-cli
+  cargo install sqlx-cli@0.7.3 --no-default-features --features native-tls,postgres --locked
 
   echo 'INFO: building ton-wallet-api'
   cd "$REPO_DIR"

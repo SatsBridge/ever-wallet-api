@@ -20,7 +20,7 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --defau
 ENV PATH="/root/.cargo/bin:${PATH}"
 
 # Install sqlx-cli using cargo
-RUN cargo install sqlx-cli
+RUN cargo install sqlx-cli@0.7.3 --no-default-features --features native-tls,postgres --locked
 # Set up the database
 
 FROM base AS builder
